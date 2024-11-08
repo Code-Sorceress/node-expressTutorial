@@ -4,7 +4,7 @@ const express = require("express");
 // Then, we create an app by calling express().
 const app = express();
 
-// This sets the port for our app to 3000. We can change it if we want.
+// This sets the port for our app to 9000. We can change it if we want.
 const port = 9000;
 
 // First route: /test

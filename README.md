@@ -11,8 +11,8 @@ const express = require("express");
 // Then, we create an app by calling express().
 const app = express();
 
-// This sets the port for our app to 3000. We can change it if we want.
-const port = 3000;
+// This sets the port for our app to 9000. We can change it if we want.
+const port = 9000;
 
 // First route: /test
 app.get("/test", (req, res) => {
@@ -45,21 +45,17 @@ app.listen(port, () => {
 
 2. **Create the app**: `const app = express();` - Here, we’re creating our app so we can start using Express.
 
-3. **Set the Port**: `const port = 3000;` - We tell our app to use port 3000. This is like saying, “let’s open the door at number 3000 for our app.”
+3. **Set the Port**: `const port = 9000;` - We tell our app to use port 9000. This is like saying, “let’s open the door at number 9000 for our app.”
 
 4. **Route `/test`**:
 
-   - `app.get('/test', (req, res) => { ... });` - This creates a route at `/test`. When you visit `http://localhost:3000/test`, it will give back a message.
+   - `app.get('/test', (req, res) => { ... });` - This creates a route at `/test`. When you visit `http://localhost:9000/test`, it will give back a message.
    - `res.json({ message: "success" });` - We send back a message as JSON: `{"message": "success"}`.
 
 5. **Route `/add`**:
 
    - `app.get('/add', (req, res) => { ... });` - This is another route called `/add`. This route can add two numbers from the URL.
-   - `req.query.num1` and `req.query.num2` - This takes two numbers from the URL. For example, if we go to `http://localhost:3000/add?num1=5&num2=10`, `num1` will be 5 and `num2` will be 10.
+   - `req.query.num1` and `req.query.num2` - This takes two numbers from the URL. For example, if we go to `http://localhost:9000/add?num1=5&num2=10`, `num1` will be 5 and `num2` will be 10.
    - `parseInt(...)` - This turns the numbers from the URL into real numbers we can add.
    - `const sum = num1 + num2;` - Here, we add the two numbers.
    - `res.json({ message: "success", data: sum });` - We send back `success` and the answer.
-
-6. **Start the Server**: `app.listen(port, ...);` - This makes the app start so we can go to `http://localhost:3000` in the browser. It listens at port 3000, waiting for people to visit our routes (`/test` or `/add`).
-
-This code lets us add two numbers by typing them in the URL, and it sends back the answer with a success message!
